@@ -124,7 +124,7 @@ void Otrezki::Add(pair<double, double>* tmp, unsigned short _N, double _eta_0, u
         curr->ChangeCharacteristic(m, _N);
         //
         double Rmax = -DBL_MAX;
-        HINSTANCE load_function = LoadLibrary(L"ÔÓÍÊÖÈÈ.dll");
+        HINSTANCE load_function = LoadLibrary(L"ФУНКЦИИ.dll");
         typedef double (*shag) (double, double, double, double, double, unsigned short);
         shag Shag = (shag)GetProcAddress(load_function, "Shag");
         if (Shag(m, curr->GetStart()->first, curr->GetEnd()->first, curr->GetStart()->second, curr->GetEnd()->second, _N) <= _b - _epsilon_granichnoe && Shag(m, curr->GetStart()->first, curr->GetEnd()->first, curr->GetStart()->second, curr->GetEnd()->second, _N) >= _a + _epsilon_granichnoe)
