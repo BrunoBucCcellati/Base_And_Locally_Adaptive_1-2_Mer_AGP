@@ -1,10 +1,10 @@
 #include<algorithm>
-#include " À¿——€.h"
+#include "–ö–õ–ê–°–°–´.h"
 #include <Windows.h>
 //
 void Otrezok::ChangeCharacteristic(double _m, unsigned short _N)
 {
-    HINSTANCE load_function = LoadLibrary(L"‘”Õ ÷»».dll");
+    HINSTANCE load_function = LoadLibrary(L"–§–£–ù–ö–¶–ò–ò.dll");
     typedef double (*characteristic) (double, double, double, double, double, unsigned short);
     characteristic Characteristic = (characteristic)GetProcAddress(load_function, "Characteristic");
     R = Characteristic(_m, start->first, end->first, start->second, end->second, _N);
@@ -124,7 +124,7 @@ void Otrezki::Add(pair<double, double>* tmp, unsigned short _N, double _eta_0, u
         curr->ChangeCharacteristic(m, _N);
         //
         double Rmax = -DBL_MAX;
-        HINSTANCE load_function = LoadLibrary(L"‘”Õ ÷»».dll");
+        HINSTANCE load_function = LoadLibrary(L"√î√ì√ç√ä√ñ√à√à.dll");
         typedef double (*shag) (double, double, double, double, double, unsigned short);
         shag Shag = (shag)GetProcAddress(load_function, "Shag");
         if (Shag(m, curr->GetStart()->first, curr->GetEnd()->first, curr->GetStart()->second, curr->GetEnd()->second, _N) <= _b - _epsilon_granichnoe && Shag(m, curr->GetStart()->first, curr->GetEnd()->first, curr->GetStart()->second, curr->GetEnd()->second, _N) >= _a + _epsilon_granichnoe)
